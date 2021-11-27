@@ -5,18 +5,34 @@ Web app dev info 3135
 
 ## Database Design
 
-**User Accounts** 
-| UserID | UserName | Password |  
-|--- | --- | --- |
+<br>
 
-**Transactions**
+### User Accounts
+
+| UserID | UserName | Password | Email Address | Phone Number | Address | Postal Code | City | Province  
+|--- | --- | --- | --- | --- | --- | --- | --- | --- |
+
+
+<br>
+
+
+### Transactions
 
 | TransactionID | Time | UserID | 
 | --- | --- | --- |
 
-**Vehicle Listings** 
+<br>
 
-| VehicleID | Type | Color | Province | City | Postal Code  
-| --- | --- | --- | --- | --- | --- |
+### Vehicle Listings
+
+| ListingID | VehicleID | Brand | Model | Year | Transmission Type | Trim | Type | Color | Price | Milleage | Province | City | Postal Code 
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
+<br>
+
+
+
+### Vehicle Database
+| VehicleID | Brand | Model | Year| Transmission Type | Trim | Color | Trunk Space | Fuel Economy | Horse Power | Drivetrain | 
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
