@@ -13,72 +13,30 @@ CREATE TABLE users (
   address     		VARCHAR(60)    NOT NULL,
   postalCode     	VARCHAR(7)     NOT NULL,
   city				VARCHAR(60)    NOT NULL,
-  province          VARCHAR(60)    NOT NULL, 
   PRIMARY KEY (userID),
   UNIQUE INDEX emailAddress (emailAddress)
 );
 
-CREATE TABLE orders (
-  orderID           INT            NOT NULL   AUTO_INCREMENT,
-  userID        	INT            NOT NULL,
-  orderDate         DATETIME       NOT NULL,
-  shipAddressID     INT            NOT NULL,
-  billingAddressID  INT            NOT NULL,
-  PRIMARY KEY (orderID), 
-  INDEX userID (userID)
-);
-
-CREATE TABLE orderItems (
-  itemID            INT            NOT NULL   AUTO_INCREMENT,
-  orderID           INT            NOT NULL,
-  productID         INT            NOT NULL,
-  itemPrice         DECIMAL(10,2)  NOT NULL,
-  discountAmount    DECIMAL(10,2)  NOT NULL,
-  quantity          INT NOT NULL,
-  PRIMARY KEY (itemID), 
-  INDEX orderID (orderID), 
-  INDEX productID (productID)
+CREATE TABLE vehicles (
+  vehicleID         INT            NOT NULL   AUTO_INCREMENT,
+  categoryID		INT			   NOT NULL,
+  brand				VARCHAR(60)	   NOT NULL,
+  years				VARCHAR(60)	   NOT NULL,
+  transmission      VARCHAR(60)    NOT NULL,
+  trims				VARCHAR(60)	   NOT NULL,
+  colour     		VARCHAR(10)    NOT NULL,
+  trunkSpace       	VARCHAR(60)    NOT NULL,
+  mpg				INT(10)		   NOT NULL,
+  horsePower		INT(10)        NOT NULL,
+  driveTrain		VARCHAR(60)	   NOT NULL,
+  PRIMARY KEY (vehicleID), 
+  INDEX categoryID (categoryID) 
 );
 
 CREATE TABLE categories (
   categoryID        INT            NOT NULL   AUTO_INCREMENT,
   categoryName      VARCHAR(255)   NOT NULL,
   PRIMARY KEY (categoryID)
-);
-
-CREATE TABLE vehiclesListings (
-  listingID         INT            NOT NULL,
-  vehicleID         INT            NOT NULL   AUTO_INCREMENT,
-  categoryID        INT            NOT NULL, 
-  brand             VARCHAR(60)    NOT NULL,
-  year              VARCHAR(4)     NOT NULL,
-  transmission      VARCHAR(15)    NOT NULL,
-  trim              VARCHAR(20)    NOT NULL,
-  colour             VARCHAR(10)    NOT NULL,
-  province       	VARCHAR(60)    NOT NULL,
-  city       		VARCHAR(60)    NOT NULL,
-  postalCode		VARCHAR(7)	   NOT NULL,
-  mileage			INT		   NOT NULL,
-  price         	DECIMAL(10,2)  NOT NULL,
-  dateAdded         DATETIME       NOT NULL,
-  PRIMARY KEY (vehicleID), 
-  INDEX categoryID (categoryID)
-);
-
-CREATE TABLE vehicles (
-  vehicleID         INT            NOT NULL   AUTO_INCREMENT,
-  categoryID        INT            NOT NULL, 
-  brand             VARCHAR(60)    NOT NULL,
-  year              VARCHAR(4)     NOT NULL,
-  transmission      VARCHAR(15)    NOT NULL,
-  trim              VARCHAR(20)    NOT NULL,
-  colour             VARCHAR(10)    NOT NULL,
-  trunkSpace        VARCHAR(60)    NOT NULL, 
-  fuelEconomy       VARCHAR(60)    NOT NULL,
-  horsePower        INT            NOT NULL, 
-  driveTrain        VARCHAR(60)    NOT NULL,
-  PRIMARY KEY (vehicleID), 
-  INDEX categoryID (categoryID), 
 );
 
 CREATE TABLE administrators (
@@ -89,29 +47,17 @@ CREATE TABLE administrators (
 );
 
 -- Insert data into the tables
+
+LOAD DATA INFILE '/xampp/htdocs/carsRUS/vehicles_data.csv' INTO TABLE vehicles FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n' IGNORE 1 ROWS (vehicleID, categoryID, brand, years, transmission, trims, colour, trunkSpace, mpg, horsePower, driveTrain);
+
+
+
+
 INSERT INTO categories (categoryID, categoryName) VALUES
 (1, 'Cars'),
 (2, 'Trucks'),
 (3, 'SUV');
 
-INSERT INTO vehiclesListings (listingID, vehicleID, categoryID, brand, year, transmission, trim, colour, province, city, postalCode, milleage, price, dateAdded) VALUES
-(1, 1, 1, 'testModel', '2002', 'testTransmission', 'testTrim', 'testCarColour', 'testCarProvince', 'testCarCity', 'testPostalCode', '99999', '3655.20', '2016-10-30 09:32:40');
-
-INSERT INTO customers (customerID, emailAddress, password, firstName, lastName, shipAddressID, billingAddressID) VALUES
-(1, 'allan.sherwood@yahoo.com', '650215acec746f0e32bdfff387439eefc1358737', 'Allan', 'Sherwood', 1, 2),
-(2, 'barryz@gmail.com', '3f563468d42a448cb1e56924529f6e7bbe529cc7', 'Barry', 'Zimmer', 3, 4),
-(3, 'christineb@solarone.com', 'ed19f5c0833094026a2f1e9e6f08a35d26037066', 'Christine', 'Brown', 5, 6);
-
-INSERT INTO orders (orderID, customerID, orderDate, shipAmount, taxAmount, shipDate, shipAddressID, cardType, cardNumber, cardExpires, billingAddressID) VALUES
-(1, 1, '2017-05-30 09:40:28', '5.00', '32.32', '2017-06-01 09:43:13', 1, 2, '4111111111111111', '04/2022', 2),
-(2, 2, '2017-06-01 11:23:20', '5.00', '0.00', NULL, 3, 2, '4111111111111111', '08/2021', 4),
-(3, 1, '2017-06-03 09:44:58', '10.00', '89.92', NULL, 1, 2, '4111111111111111', '04/2022', 2);
-
-INSERT INTO orderItems (itemID, orderID, productID, itemPrice, discountAmount, quantity) VALUES
-(1, 1, 2, '399.00', '39.90', 1),
-(2, 2, 4, '699.00', '69.90', 1),
-(3, 3, 3, '499.00', '49.90', 1),
-(4, 3, 6, '549.99', '0.00', 1);
 
 INSERT INTO administrators (adminID, emailAddress, password) VALUES
 (1, 'admin@myguitarshop.com', '6a718fbd768c2378b511f8249b54897f940e9022');
