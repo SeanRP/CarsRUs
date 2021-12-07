@@ -13,6 +13,7 @@ CREATE TABLE users (
   address     		VARCHAR(60)    NOT NULL,
   postalCode     	VARCHAR(7)     NOT NULL,
   city				VARCHAR(60)    NOT NULL,
+  province          VARCHAR(60)    NOT NULL, 
   PRIMARY KEY (userID),
   UNIQUE INDEX emailAddress (emailAddress)
 );
@@ -39,25 +40,45 @@ CREATE TABLE orderItems (
   INDEX productID (productID)
 );
 
-CREATE TABLE vehicles (
-  vehicleID         INT            NOT NULL   AUTO_INCREMENT,
-  vehicleType       VARCHAR(60)    NOT NULL,
-  vehicleColour     VARCHAR(10)    NOT NULL,
-  province       	VARCHAR(60)    NOT NULL,
-  city       		VARCHAR(60)    NOT NULL,
-  postalCode		VARCHAR(7)	   NOT NULL,
-  milleage			INT(10)		   NOT NULL,
-  price         	DECIMAL(10,2)  NOT NULL,
-  dateAdded         DATETIME       NOT NULL,
-  PRIMARY KEY (vehicleID), 
-  INDEX categoryID (categoryID), 
-  UNIQUE INDEX productCode (productCode)
-);
-
 CREATE TABLE categories (
   categoryID        INT            NOT NULL   AUTO_INCREMENT,
   categoryName      VARCHAR(255)   NOT NULL,
   PRIMARY KEY (categoryID)
+);
+
+CREATE TABLE vehiclesListings (
+  listingID         INT            NOT NULL,
+  vehicleID         INT            NOT NULL   AUTO_INCREMENT,
+  categoryID        INT            NOT NULL, 
+  brand             VARCHAR(60)    NOT NULL,
+  year              VARCHAR(4)     NOT NULL,
+  transmission      VARCHAR(15)    NOT NULL,
+  trim              VARCHAR(20)    NOT NULL,
+  colour             VARCHAR(10)    NOT NULL,
+  province       	VARCHAR(60)    NOT NULL,
+  city       		VARCHAR(60)    NOT NULL,
+  postalCode		VARCHAR(7)	   NOT NULL,
+  mileage			INT		   NOT NULL,
+  price         	DECIMAL(10,2)  NOT NULL,
+  dateAdded         DATETIME       NOT NULL,
+  PRIMARY KEY (vehicleID), 
+  INDEX categoryID (categoryID)
+);
+
+CREATE TABLE vehicles (
+  vehicleID         INT            NOT NULL   AUTO_INCREMENT,
+  categoryID        INT            NOT NULL, 
+  brand             VARCHAR(60)    NOT NULL,
+  year              VARCHAR(4)     NOT NULL,
+  transmission      VARCHAR(15)    NOT NULL,
+  trim              VARCHAR(20)    NOT NULL,
+  colour             VARCHAR(10)    NOT NULL,
+  trunkSpace        VARCHAR(60)    NOT NULL, 
+  fuelEconomy       VARCHAR(60)    NOT NULL,
+  horsePower        INT            NOT NULL, 
+  driveTrain        VARCHAR(60)    NOT NULL,
+  PRIMARY KEY (vehicleID), 
+  INDEX categoryID (categoryID), 
 );
 
 CREATE TABLE administrators (
@@ -73,8 +94,8 @@ INSERT INTO categories (categoryID, categoryName) VALUES
 (2, 'Trucks'),
 (3, 'SUV');
 
-INSERT INTO vehicles (vehicleID, vehicleType, vehicleColour, province, city, postalCode, milleage, price, dateAdded) VALUES
-(1, 1, 'testCarCode', 'testCarType', 'testCarColour', 'testCarProvince', 'testCarCity', '2016-10-30 09:32:40');
+INSERT INTO vehiclesListings (listingID, vehicleID, categoryID, brand, year, transmission, trim, colour, province, city, postalCode, milleage, price, dateAdded) VALUES
+(1, 1, 1, 'testModel', '2002', 'testTransmission', 'testTrim', 'testCarColour', 'testCarProvince', 'testCarCity', 'testPostalCode', '99999', '3655.20', '2016-10-30 09:32:40');
 
 INSERT INTO customers (customerID, emailAddress, password, firstName, lastName, shipAddressID, billingAddressID) VALUES
 (1, 'allan.sherwood@yahoo.com', '650215acec746f0e32bdfff387439eefc1358737', 'Allan', 'Sherwood', 1, 2),
