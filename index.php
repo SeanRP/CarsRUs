@@ -24,69 +24,6 @@ if ($action == 'list_vehicles') {
     $vehicles = get_vehicles_by_category($category_id);
 
 	
-} else if ($action == 'delete_vehicle') {
-    $vehicle_id = filter_input(INPUT_POST, 'vehicle_id', 
-            FILTER_VALIDATE_INT);
-    $category_id = filter_input(INPUT_POST, 'category_id', 
-            FILTER_VALIDATE_INT);
-    if ($category_id == NULL || $category_id == FALSE ||
-            $vehicle_id == NULL || $vehicle_id == FALSE) {
-        $error = "Missing or incorrect vehicle id or category id.";
-        include('../errors/error.php');
-    } else { 
-        delete_vehicle($vehicle_id);
-        header("Location: .?category_id=$category_id");
-    }
-	
-} else if ($action == 'show_add_form') {
-    $categories = get_categories();
-    include('vehicle_add.php');
-	
-	
-} else if ($action == 'add_vehicle') {
-    $category_id = filter_input(INPUT_POST, 'category_id', FILTER_VALIDATE_INT);
-    $code = filter_input(INPUT_POST, 'code');
-    $name = filter_input(INPUT_POST, 'name');
-    $price = filter_input(INPUT_POST, 'price', FILTER_VALIDATE_FLOAT);
-    if ($category_id == NULL || $category_id == FALSE || $code == NULL || 
-            $name == NULL || $price == NULL || $price == FALSE) {
-        $error = "Invalid vehicle data. Check all fields and try again.";
-        include('../errors/error.php');
-    } else { 
-        add_vehicle($category_id, $code, $name, $price);
-        header("Location: .?category_id=$category_id");
-    }
-	
-	
-	
-} else if ($action == 'edit_vehicle') {
-    $category_id = filter_input(INPUT_POST, 'category_id', FILTER_VALIDATE_INT);
-    $code = filter_input(INPUT_POST, 'code');
-    $name = filter_input(INPUT_POST, 'name');
-    $price = filter_input(INPUT_POST, 'price', FILTER_VALIDATE_FLOAT);
-	if ($category_id == NULL || $category_id == FALSE || $code == NULL || 
-            $name == NULL || $price == NULL || $price == FALSE) {
-        $error = "Invalid vehicle data. Check all fields and try again.";
-        include('../errors/error.php');
-	} else { 
-        edit_vehicle($category_id, $code, $name, $price);
-        header("Location: .?category_id=$category_id");
-	}
-	
-}   else if ($action == 'goto_edit_vehicle') {
-	$categories = get_categories();
-    $category_id = filter_input(INPUT_POST, 'category_id', FILTER_VALIDATE_INT);
-    $code = filter_input(INPUT_POST, 'code');
-    $name = filter_input(INPUT_POST, 'name');
-    $price = filter_input(INPUT_POST, 'price', FILTER_VALIDATE_FLOAT);
-	if ($category_id == NULL || $category_id == FALSE || $code == NULL || 
-            $name == NULL || $price == NULL || $price == FALSE) {
-        $error = "Invalid vehicle data. Check all fields and try again.";
-       include('../errors/error.php');
-	}else {
-		include('vehicle_edit.php');
-		
-	}
 }		
 ?>
 
