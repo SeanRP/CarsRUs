@@ -20,8 +20,10 @@ CREATE TABLE users (
 CREATE TABLE vehicles (
   vehicleID         INT            NOT NULL   AUTO_INCREMENT,
   categoryID		INT			   NOT NULL,
-  brand				VARCHAR(60)	   NOT NULL,
+  make				VARCHAR(60)	   NOT NULL,
+  model				VARCHAR(60)	   NOT NULL,
   years				VARCHAR(60)	   NOT NULL,
+  vehicleCode		VARCHAR(60)	   NOT NULL,  
   transmission      VARCHAR(60)    NOT NULL,
   trims				VARCHAR(60)	   NOT NULL,
   colour     		VARCHAR(10)    NOT NULL,
@@ -48,7 +50,7 @@ CREATE TABLE administrators (
 
 -- Insert data into the tables
 
-LOAD DATA INFILE '/xampp/htdocs/carsRUS/vehicles_data.csv' INTO TABLE vehicles FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n' IGNORE 1 ROWS (vehicleID, categoryID, brand, years, transmission, trims, colour, trunkSpace, mpg, horsePower, driveTrain);
+LOAD DATA INFILE '/xampp/htdocs/carsRUS/vehicles_data.csv' INTO TABLE vehicles FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n' IGNORE 1 ROWS (vehicleID, categoryID, make, model, years, vehicleCode, transmission, trims, colour, trunkSpace, mpg, horsePower, driveTrain);
 
 
 

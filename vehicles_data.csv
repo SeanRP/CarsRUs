@@ -1,51 +1,11 @@
-vehicleID,categoryID,brand,year,transmission,trims,colour,trunkSpace,mpg,horsePower,driveTrain
-1,2,dodge ram,2001,automatic,1500,white,55.5ft³,13,230,Rear Wheel Drive
-2,3,ford edge,2011,automatic,SE,silver,32.2ft³,18,285,All Wheel Drive
-3,3,bmw x3,2017,automatic,sDrive30i,black,27.6ft³,21,240,All Wheel Drive
-4,1,honda civic,2020,automatic,EX,black,11.9ft³,31,174,Front Wheel Drive
-5,2,chevrolet silverado,2008,automatic,1500,silver,53.2ft³,17,195,Rear Wheel Drive
-6,2,dodge ram,2005,automatic,2500,gray,74.9ft³,14,345,Four Wheel Drive
-7,1,hyundai elantra,2017,automatic,4dr Sdn Man L,red,14.4ft³,32,128,Front Wheel Drive
-8,2,ford f150,2008,automatic,XL,white,65.5ft³,14,248,Rear Wheel Drive
-9,2,ford ranger,2009,manual,XL,blue,37.4ft³,15,207,Rear Wheel Drive
-10,2,chevrolet,1998,automatic,base,gray,39ft³,16,120,Rear Wheel Drive
-11,,,,,,,ft³,,,
-12,,,,,,,ft³,,,
-13,,,,,,,ft³,,,
-14,,,,,,,ft³,,,
-15,,,,,,,ft³,,,
-16,,,,,,,ft³,,,
-17,,,,,,,ft³,,,
-18,,,,,,,,,,
-19,,,,,,,ft³,,,
-20,,,,,,,ft³,,,
-21,,,,,,,ft³,,,
-22,,,,,,,ft³,,,
-23,,,,,,,ft³,,,
-24,,,,,,,ft³,,,
-25,,,,,,,ft³,,,
-26,,,,,,,ft³,,,
-27,,,,,,,ft³,,,
-28,,,,,,,ft³,,,
-29,,,,,,,ft³,,,
-30,,,,,,,ft³,,,
-31,,,,,,,,,,
-32,,,,,,,ft³,,,
-33,,,,,,,ft³,,,
-34,,,,,,,ft³,,,
-35,,,,,,,ft³,,,
-36,,,,,,,ft³,,,
-37,,,,,,,ft³,,,
-38,,,,,,,,,,
-39,,,,,,,ft³,,,
-40,,,,,,,ft³,,,
-41,,,,,,,ft³,,,
-42,,,,,,,ft³,,,
-43,,,,,,,ft³,,,
-44,,,,,,,ft³,,,
-45,,,,,,,ft³,,,
-46,,,,,,,ft³,,,
-47,,,,,,,,,,
-48,,,,,,,ft³,,,
-49,,,,,,,ft³,,,
-50,,,,,,,ft³,,,
+vehicleID,categoryID,make,model,years,vehicleCode,transmission,trims,colour,trunkSpace,mpg,horsePower,driveTrain
+1,2,dodge,ram,2001,dodge_ram_2001,automatic,1500,white,55.5ft³,13,230,Rear Wheel Drive
+2,3,ford,edge,2011,ford_edge_2011,automatic,SE,silver,32.2ft³,18,285,All Wheel Drive
+3,3,bmw,x3,2017,bmw_x3_2017,automatic,sDrive30i,black,27.6ft³,21,240,All Wheel Drive
+4,1,honda,civic,2020,honda_civic_2020,automatic,EX,black,11.9ft³,31,174,Front Wheel Drive
+5,2,chevrolet,silverado,2008,chevrolet_silverado_2008,automatic,1500,silver,53.2ft³,17,195,Rear Wheel Drive
+6,2,dodge,ram,2005,dodge_ram_2005,automatic,2500,gray,74.9ft³,14,345,Four Wheel Drive
+7,1,hyundai,elantra,2017,hyundai_elantra_2017,automatic,4dr Sdn Man L,red,14.4ft³,32,128,Front Wheel Drive
+8,2,ford,f150,2008,ford_f150_2008,automatic,XL,white,65.5ft³,14,248,Rear Wheel Drive
+9,2,ford,ranger,2009,ford_ranger_2009,manual,XL,blue,37.4ft³,15,207,Rear Wheel Drive
+10,2,chevrolet,silverado,1998,chevrolet_silverado_1998,automatic,base,gray,39ft³,16,120,Rear Wheel Drive

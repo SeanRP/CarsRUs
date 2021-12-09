@@ -22,8 +22,6 @@ if ($action == 'list_vehicles') {
     $category_name = get_category_name($category_id);
     $categories = get_categories();
     $vehicles = get_vehicles_by_category($category_id);
-
-	
 }		
 ?>
 
@@ -64,9 +62,10 @@ if ($action == 'list_vehicles') {
 		<?php foreach ($vehicles as $vehicle) : ?>
         <div class="card">
 			
-            <img class="card-img-top" src="images/honda-civic.png" alt="Card image cap">
+            <img class="card-img-top" src="images/<?php echo $vehicle['vehicleCode'] ?>.png" alt="<?php echo $vehicle['vehicleCode'] ?>">
+			
             <div class="card-body">
-            <h5 class="card-title"><?php echo $vehicle['brand']; ?></h5>
+            <h5 class="card-title"><?php echo $vehicle['make'], " ", $vehicle['model']; ?></h5>
             <p class="card-text">Year: <?php echo $vehicle['years']; ?>  <br>Transmission: <?php echo $vehicle['transmission']; ?> <br>Trim: <?php echo $vehicle['trims']; ?> <br>Colour: <?php echo $vehicle['colour']; ?> <br>Trunk Space: <?php echo $vehicle['trunkSpace']; ?> <br>MPG: <?php echo $vehicle['mpg']; ?> <br>Horsepower : <?php echo $vehicle['horsePower']; ?> <br>Drivetrain: <?php echo $vehicle['driveTrain']; ?></p>
             </div>
             <div class="card-footer">
