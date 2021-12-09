@@ -11,46 +11,46 @@ require($_SERVER['DOCUMENT_ROOT'].'/carsRUS/auth/signup.php');
             <form id ="signup-form" class="form" action="" method="post">
                 <div class="form-row">
                     <div class="form-group col">
-                        <label for="userName">User name</label>
-                        <input type="text" class="form-control" name="userName" id="userName">
+                        <label>User name</label>
+                        <input type="text" class="form-control" name="userName">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="inputPassword4">Password</label>
-                        <input type="text" class="form-control" name="password" id="inputPassword4" placeholder="Password">
+                        <label>Password</label>
+                        <input type="text" class="form-control" name="password" placeholder="Password">
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="confirm"">Confirm Password</label>
-                        <input type="text"class="form-control" name="passwordMatch" placeholder="Confirm Password">
+                        <label>Confirm Password</label>
+                        <input type="text" class="form-control" name="passwordMatch" placeholder="Confirm Password">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col">
-                        <label for="inputEmail4">Email</label>
-                        <input type="text" class="form-control" name="email" id="inputEmail4" placeholder="Email">
+                        <label>Email</label>
+                        <input type="email" class="form-control" name="email"  placeholder="Email">
                     </div>
                     <div class="form-group col">
-                        <label for="phone">Phone Number</label>
-                        <input type="text" class="form-control" name="phone" id="phone" placeholder="Phone Number">
+                        <label>Phone Number</label>
+                        <input type="tel" class="form-control" name="phone"  placeholder="Phone Number">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputAddress">Address</label>
-                    <input type="text" class="form-control" name="address" id="inputAddress" placeholder="1234 Main St">
+                    <label>Address</label>
+                    <input type="text" class="form-control" name="address" placeholder="1234 Main St">
                 </div>
                 <div class="form-group">
-                    <label for="inputAddress2">Address 2</label>
-                    <input type="text" class="form-control" name="address2" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                    <label>Address 2</label>
+                    <input type="text" class="form-control" name="address2" placeholder="Apartment, studio, or floor">
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="inputCity">City</label>
-                        <input type="text" class="form-control" name="inputCity">
+                        <label>City</label>
+                        <input type="text" class="form-control" name="city">
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="inputProvince">Province</label>
-                        <select id="inputProvince" class="form-control" name="inputProvince">
+                        <label>Province</label>
+                        <select class="form-control" name="province">
                             <option selected>Choose...</option>
                             <option>British Columbia</option>
                             <option>Alberta</option>
@@ -65,12 +65,12 @@ require($_SERVER['DOCUMENT_ROOT'].'/carsRUS/auth/signup.php');
                     </div>
                     <div class="form-group col-md-2">
                         <label for="inputPostalCode">Postal Code</label>
-                        <input type="text" class="form-control" name="inputPostalCode">
+                        <input type="text" class="form-control" name="postalcode">
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <input class="form-check-input" type="checkbox"">
                     <label class="form-check-label" for="gridCheck">
                         Check me out
                     </label>

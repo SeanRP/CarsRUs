@@ -11,9 +11,9 @@ if(isset($_POST['submit'])) {
     $phone          = filter_input(INPUT_POST, 'phone');
     $address        = filter_input(INPUT_POST, 'address');
     $address2       = filter_input(INPUT_POST, 'address2');
-    $city           = filter_input(INPUT_POST, 'inputCity');
-    $province       = filter_input(INPUT_POST, 'inputProvince');
-    $postalCode     = filter_input(INPUT_POST, 'inputPostalCode');
+    $city           = filter_input(INPUT_POST, 'city');
+    $province       = filter_input(INPUT_POST, 'province');
+    $postalCode     = filter_input(INPUT_POST, 'postalcode');
 
     //If any input is null, reload form
     if(
@@ -25,15 +25,16 @@ if(isset($_POST['submit'])) {
       || empty($postalCode)
       || empty($city) 
     ){
-      header('location: ?message=emptyField');
       echo "<script type='text/javascript'>alert('Please fill in all fields');</script>";
+      header('location: ?message=emptyField');
     }
   
     //Check if passwords match
     
     if($password !== $passwordMatch){
-        header('location: ?message=passwordError');
         echo "<script type='text/javascript'>alert('Passwords does not match');</script>";
+        header('location: ?message=passwordError');
+
     } 
     
     

@@ -21,6 +21,9 @@
         <a class="nav-link" href="/carsRUS/view/my_account.php">My Account</a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="/carsRUS/view/create_listing.php">Create Listing</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="/carsRUS/view/sign_up.php">Sign Up </a>
       </li>
       <li class="nav-item">
@@ -30,10 +33,6 @@
         <a class="nav-link" href="/carsRUS/auth/logout.php">Log Out</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
   </div>
 </nav>
 
