@@ -14,7 +14,7 @@ require($_SERVER['DOCUMENT_ROOT'].'/carsRUS/model/listing.php');
                         <div class="input-group-prepend">
                         <label class="input-group-text" for="inputGroupSelect01">Brand</label>
                         </div>
-                        <select class="custom-select" id="brand">
+                        <select class="custom-select" name="brand" id="brand">
                             <option selected>Choose...</option>
                             <option>Honda</option>
                             <option>Toyota</option>
@@ -25,7 +25,7 @@ require($_SERVER['DOCUMENT_ROOT'].'/carsRUS/model/listing.php');
                         <div class="input-group-prepend">
                         <label class="input-group-text" for="inputGroupSelect01">Model</label>
                         </div>
-                        <select class="custom-select" id="inputGroupSelect01">
+                        <select class="custom-select"  name="model" id="inputGroupSelect01">
                             <option selected>Choose...</option>
                             <option>Civic</option>
                             <option>F150</option>
@@ -35,7 +35,7 @@ require($_SERVER['DOCUMENT_ROOT'].'/carsRUS/model/listing.php');
                     <div class="input-group mb-3 col-sm">
                         <div class="input-group-prepend">
                         <label class="input-group-text" for="inputGroupSelect01">Year</label>
-                        <input class="form-control" type="number" min="1980" max="2021" value= readonly>
+                        <input class="form-control"  name="year" type="number" min="1980" max="2021">
                         </div>
                     </div>
                 </div>
@@ -44,7 +44,7 @@ require($_SERVER['DOCUMENT_ROOT'].'/carsRUS/model/listing.php');
                         <div class="input-group-prepend">
                         <label class="input-group-text" for="inputGroupSelect01">Transmission</label>
                         </div>
-                        <select class="custom-select" id="inputGroupSelect01">
+                        <select class="custom-select"  name="transmission" id="inputGroupSelect01">
                             <option selected>Auto</option>
                             <option>Manual</option>
                         </select>
@@ -53,24 +53,24 @@ require($_SERVER['DOCUMENT_ROOT'].'/carsRUS/model/listing.php');
                         <div class="input-group-prepend">
                             <span class="input-group-text">$</span>
                         </div>
-                        <input type="text" class="form-control">
+                        <input type="text"  name="price" class="form-control">
                     </div>
                     <div class="input-group mb-3 col-md-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text">Milleage</span>
                         </div>
-                        <input type="text" class="form-control">
+                        <input type="text"  name="milleage" class="form-control">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="input-group mb-3 col-md-3">
-                        <input class="form-control" type="text" value='<?php echo $_SESSION['address'];?>' readonly>
+                        <input class="form-control" type="text"  name="brand" value='<?php echo $_SESSION['address'];?>' readonly>
                     </div>
                     <div class="input-group mb-3 col-md-3">
-                        <input class="form-control" type="text" value='<?php echo $_SESSION['postalCode'];?>'  readonly>
+                        <input class="form-control" type="text"  name="brand" value='<?php echo $_SESSION['postalCode'];?>'  readonly>
                     </div>
                     <div class="input-group mb-3 col-md-3">
-                        <input class="form-control" type="text" value='<?php echo $_SESSION['city'];?>' readonly>
+                        <input class="form-control" type="text"  name="brand" value='<?php echo $_SESSION['city'];?>' readonly>
                     </div>
                 </div>
                 <button type="submit" name="submit" value="submit" class="btn btn-primary">Create Listing</button>

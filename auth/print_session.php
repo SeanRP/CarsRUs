@@ -18,5 +18,6 @@ print("\npostalCode: ");
 print_r($_SESSION['postalCode']);
 print("\ncity: ");
 print_r($_SESSION['city']);
+var_dump($_POST);
 echo "</pre>";
 ?>
