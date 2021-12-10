@@ -2,7 +2,7 @@
     <br>
     <br>
     <br>
-    <p class="copyright">
+    <p class="copyright text-white">
     &nbsp; CarsRUs &copy;  <?php echo date("Y"); ?> 
     </p>
 </footer>
