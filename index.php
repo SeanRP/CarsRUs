@@ -33,6 +33,9 @@ if ($action == 'list_vehicles') {
     <h1 class="display-4">Welcome to Cars R' Us!</h1>
     <p class="lead">We sell the best cars in the city, make sure to come on down and we can talk buisness after you finished having a look at all our cars.</p>
     <hr class="my-4">
+        <a class="btn btn-primary" href="/carsRUS/view/sign_up.php" role="button">Sign Up</a>
+        <a class="btn btn-primary" href="/carsRUS/view/create_listing.php" role="button">Create Listing</a>
+
 </div>
 
 		<aside>
@@ -72,12 +75,6 @@ if ($action == 'list_vehicles') {
 	
        
     </div>
-	
-	
-		<p class="last_paragraph">
-            <a href="/carsRUS/view/create_listing.php">Add vehicle</a>
-        </p>
-		
 		
 <!--container-->   
 </div>
