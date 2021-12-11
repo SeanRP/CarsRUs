@@ -1,5 +1,5 @@
 <?php 
-require ($_SERVER['DOCUMENT_ROOT'].'/carsRUS/model/database_class.php');
+require($_SERVER['DOCUMENT_ROOT'].'/carsRUS/model/database_class.php');
 $db = new Database();
 
 if(isset($_SESSION['login'])){

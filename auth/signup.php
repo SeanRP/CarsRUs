@@ -30,13 +30,11 @@ if(isset($_POST['submit'])) {
     }
   
     //Check if passwords match
-    
     if($password !== $passwordMatch){
         echo "<script type='text/javascript'>alert('Passwords does not match');</script>";
         header('location: ?message=passwordError');
 
     } 
-    
     
     //Search for duplicate userName
     $checkuserName = $db->run("SELECT * FROM users WHERE userName=?", [$userName])->fetch();
@@ -55,7 +53,7 @@ if(isset($_POST['submit'])) {
         VALUES ( ?, ?, ?, ?, ?, ?, ?)",[$userName, $hashed_pword, $email, $phone, $address, $postalCode, $city]);
      
       //header("location: http://".$_SERVER['HTTP_HOST']);
-      header('location: /carsRUS/');
+      header('location: /carsRUS/view/log_in.php');
     }
   
         

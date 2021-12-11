@@ -1,7 +1,6 @@
 <?php 
 include($_SERVER['DOCUMENT_ROOT'].'/carsRUS/view/header.php');
-require($_SERVER['DOCUMENT_ROOT'].'/carsRUS/auth/account.php');
-
+session_start();
 ?>
 
 <div class="container">
@@ -13,16 +12,6 @@ require($_SERVER['DOCUMENT_ROOT'].'/carsRUS/auth/account.php');
                     <div class="form-group col">
                         <label for="userName">User name</label>
                         <input type="text" class="form-control" value='<?php echo $_SESSION['userName']; ?>' name="userName" id="userName">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="inputPassword4">Password</label>
-                        <input type="text" class="form-control" name="password" id="inputPassword4" placeholder="New Password">
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="confirm"">Confirm Password</label>
-                        <input type="text"class="form-control" name="passwordMatch" placeholder="Confirm New Password">
                     </div>
                 </div>
                 <div class="form-row">
@@ -38,10 +27,6 @@ require($_SERVER['DOCUMENT_ROOT'].'/carsRUS/auth/account.php');
                 <div class="form-group">
                     <label for="inputAddress">Address</label>
                     <input type="text" class="form-control"  value='<?php echo $_SESSION['address'];?>' name="address" id="inputAddress">
-                </div>
-                <div class="form-group">
-                    <label for="inputAddress2">Address 2</label>
-                    <input type="text" class="form-control" name="address2" id="inputAddress2" >
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
@@ -68,15 +53,6 @@ require($_SERVER['DOCUMENT_ROOT'].'/carsRUS/auth/account.php');
                         <input type="text" class="form-control" value='<?php echo $_SESSION['postalCode'];?>' name="inputPostalCode">
                     </div>
                 </div>
-                <div class="form-group">
-                    <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck">
-                    <label class="form-check-label" for="gridCheck">
-                        Check me out
-                    </label>
-                    </div>
-                </div>
-                <button type="submit" name="update" value="submit" class="btn btn-primary">Update</button>
             </form>
         </div>
     </main>

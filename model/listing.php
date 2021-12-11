@@ -1,48 +1,60 @@
-<?php 
-include($_SERVER['DOCUMENT_ROOT'].'/carsRUS/auth/print_session.php');
+<?php
 require($_SERVER['DOCUMENT_ROOT'].'/carsRUS/model/database_class.php');
 $db = new Database();
 
+
 if(isset($_POST['submit'])) { 
+ 
+    $args = array(
+        'categoryID' =>FILTER_VALIDATE_INT,
+        'make'=>FILTER_SANITIZE_STRING, 
+        'model'=>FILTER_SANITIZE_STRING,
+        'years'=>FILTER_SANITIZE_STRING,
+        'transmission'=>FILTER_SANITIZE_STRING,
+        'trims'=>FILTER_SANITIZE_STRING,
+        'colour'=>FILTER_SANITIZE_STRING,
+        'trunkSpace'=>FILTER_SANITIZE_STRING,
+        'mpg'=>FILTER_VALIDATE_INT,
+        'horsePower'=>FILTER_VALIDATE_INT,
+        'driveTrain'=>FILTER_SANITIZE_STRING
+    );
+
+    $post_arr = filter_input_array(INPUT_POST,$args);
+    echo "<pre>";
+    echo print_r($post_arr);
+    echo"</pre>";
     
-    $brand              = filter_input(INPUT_POST, 'brand');
-    $model              = filter_input(INPUT_POST, 'model');
-    $year               = filter_input(INPUT_POST, 'year');
-    $transmission       = filter_input(INPUT_POST, 'transmission');
-    $price              = filter_input(INPUT_POST, 'price');
-    $milleage           = filter_input(INPUT_POST, 'milleage');
-
-    $categoryID = 1;
-    $trims = "trims"; 
-    $colour = "blue"; 
-    $trunkspace = "26L";
-    $mpg = 25;
-    $horsepower = 200;
-    $drivetrain = 200;
-
+    //generate vehicle code to match images
+    $vehicle_code = strtolower($post_arr['make']) . "_" . strtolower($post_arr['model']) . "_" . $post_arr['years'];
+    echo $vehicle_code;
 
     $db->run("INSERT INTO vehicles (
         categoryID,
-        brand,
+        make,
+        model,
         years,
-        transmission,
-        trims, 
-        colour, 
-        trunkspace,
-        mpg,
-        horsepower,
+        vehicleCode, 
+        transmission, 
+        trims,
+        colour,
+        trunkSpace,
+        mpg, 
+        horsePower,
         driveTrain)
-        VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ? ,?)", [
-            $categoryID,
-            $brand,
-            $year,
-            $transmission,
-            $trims,
-            $colour,
-            $trunkspace,
-            $mpg,
-            $horsepower,
-            $drivetrain]);
+        VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ? ,? ,? ,?)", [
+            $post_arr['categoryID'],
+            $post_arr['make'],
+            $post_arr['model'],
+            $post_arr['years'],
+            $vehicle_code,
+            $post_arr['transmission'],
+            $post_arr['trims'],
+            $post_arr['colour'],
+            $post_arr['trunkSpace'],
+            $post_arr['mpg'],
+            $post_arr['horsePower'],
+            $post_arr['driveTrain']
+        ]);
 
 }
 

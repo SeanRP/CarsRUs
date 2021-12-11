@@ -33,10 +33,6 @@ if ($action == 'list_vehicles') {
     <h1 class="display-4">Welcome to Cars R' Us!</h1>
     <p class="lead">We sell the best cars in the city, make sure to come on down and we can talk buisness after you finished having a look at all our cars.</p>
     <hr class="my-4">
-    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-    <p class="lead">
-        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-    </p>
 </div>
 
 		<aside>
