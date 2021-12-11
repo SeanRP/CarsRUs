@@ -11,7 +11,7 @@ require($_SERVER['DOCUMENT_ROOT'].'/carsRUS/auth/signup.php');
             <form id ="signup-form" class="form" action="" method="post">
                 <div class="form-row">
                     <div class="form-group col">
-                        <label>User name</label>
+                        <label>User Name</label>
                         <input type="text" class="form-control" name="userName">
                     </div>
                 </div>

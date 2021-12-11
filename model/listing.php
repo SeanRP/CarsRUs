@@ -32,7 +32,17 @@ if(isset($_POST['submit'])) {
         mpg,
         horsepower,
         driveTrain)
-        VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ? ,?)", [$categoryID,$brand,$year,$transmission,$trims,$colour,$trunkspace,$mpg,$horsepower,$drivetrain]);
+        VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ? ,?)", [
+            $categoryID,
+            $brand,
+            $year,
+            $transmission,
+            $trims,
+            $colour,
+            $trunkspace,
+            $mpg,
+            $horsepower,
+            $drivetrain]);
 
 }
 

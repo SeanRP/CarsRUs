@@ -1,5 +1,5 @@
 <?php
-    $dsn = 'mysql:host=localhost;dbname=cars_r_us_db';
+    $dsn = 'mysql:host=localhost;dbname=Cars_R_Us_DB';
     $username = 'mgs_user';
     $password = 'pa55word';
 
